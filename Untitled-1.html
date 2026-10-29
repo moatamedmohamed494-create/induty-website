@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IN DUTY - للتوريدات العمومية والأمن ونظافة المنشآت</title>
+    <!-- Google Fonts (Cairo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0b2545;
+            --secondary-color: #134074;
+            --accent-color: #c59b27;
+            --accent-hover: #a37f1e;
+            --light-bg: #f8f9fa;
+            --dark-text: #1d2d44;
+            --light-text: #8d99ae;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .top-bar-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-bar-info span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top-bar-info i {
+            color: var(--accent-color);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(11, 37, 69, 0.88), rgba(11, 37, 69, 0.88)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1350&q=80') center/cover;
+            color: var(--white);
+            padding: 100px 5% 120px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 5%;
+            background-color: var(--light-bg);
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .section-title p {
+            color: var(--light-text);
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 35px 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-top-color: var(--accent-color);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(197, 155, 39, 0.1);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            text-align: right;
+            margin-top: 15px;
+        }
+
+        .service-card ul li {
+            padding: 6px 0;
+            font-size: 0.95rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-card ul li i {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+        }
+
+        /* Interactive Estimator */
+        .calculator-section {
+            padding: 80px 5%;
+            background-color: var(--white);
+        }
+
+        .calculator-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .form-group select, .form-group input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .calc-result {
+            margin-top: 30px;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 5%;
+            background-color: var(--light-bg);
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-top: 4px;
+        }
+
+        .contact-form {
+            background-color: var(--white);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 120px;
+            width: 100%;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        /* Success Message Alert */
+        .alert-success {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid #c3e6cb;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 5% 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 10px;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: var(--light-text);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .top-bar {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <span><i class="fas fa-map-marker-alt"></i> المقر الرئيسي: اللبيني – الهرم، الجيزة</span>
+            <span><i class="fas fa-clock"></i> مواعيد العمل: 10 ص - 6 م</span>
+        </div>
+        <div class="top-bar-info">
+            <span><i class="fas fa-phone"></i> تواصل مباشر: 01005884635</span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <div class="logo-text">IN <span>DUTY</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">عن الشركة</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#estimator">حاسبة التعاقدات</a></li>
+                <li><a href="#contact">طلب استفسار</a></li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">طلب عرض سعر</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>IN DUTY للتوريدات العمومية والأمن والحراسة</h1>
+            <p>الشريك الموثوق للمؤسسات والشركات في توفير الكوادر الأمنية المدربة، عمالة النظافة الاحترافية، والتوريدات العمومية بأعلى معايير الجودة.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary">طلب تعاقد جديد</a>
+                <a href="#services" class="btn btn-outline">استكشف خدماتنا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="calculator-section" id="about">
+        <div class="calculator-container" style="background: none; box-shadow: none; padding: 0;">
+            <div class="section-title">
+                <h2>عن شركة IN DUTY</h2>
+                <p>تعتبر شركة IN DUTY للتوكيلات والتوريدات العمومية من الشركات الرائدة في تقديم الحلول المتكاملة لإدارة المنشآت وتشغيل العمالة وتوفير التوريدات للمؤسسات الحكومية والخاصة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>مجالات نشاط الشركة</h2>
+            <p>نقدم مجالات عمل واسعة لتغطية كافة متطلبات المنشآت التجارية والإدارية</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>خدمات الأمن والحراسة</h3>
+                <p>توفير أفراد ومشرفين أمن على أعلى مستوى من الانضباط والجاهزية لحماية منشأتك.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> حراسة الشركات والمنشآت التجارية</li>
+                    <li><i class="fas fa-check"></i> تنظيم بوابات ودخول الزوار</li>
+                    <li><i class="fas fa-check"></i> مشرفون ميدانيون لمتابعة الوردية</li>
+                    <li><i class="fas fa-check"></i> زي رسمي موحد ينشر الانضباط</li>
+                </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-broom"></i>
+                </div>
+                <h3>خدمات النظافة والتعقيم</h3>
+                <p>حلول نظافة شاملة وعمالة مدربة للشركات والمباني الإدارية والتجارية.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> عمال وعاملات نظافة للمقرات</li>
+                    <li><i class="fas fa-check"></i> نظافة دورية للمكاتب والواجهات</li>
+                    <li><i class="fas fa-check"></i> مواد ومعدات نظافة عالية الجودة</li>
+                    <li><i class="fas fa-check"></i> خطط نظافة يومية وأسبوعية</li>
+                </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-boxes-stacked"></i>
+                </div>
+                <h3>التوريدات العمومية</h3>
+                <p>تأمين وتوريد كافة المستلزمات التشغيلية والمكتبية للمؤسسات والشركات.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> أدوات ومستلزمات النظافة بالكامل</li>
+                    <li><i class="fas fa-check"></i> الأدوات المكتبية والمستهلكات</li>
+                    <li><i class="fas fa-check"></i> توريد الزي الرسمي (Uniform)</li>
+                    <li><i class="fas fa-check"></i> عقود توريد سنوية وشهرية</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Estimator -->
+    <section class="calculator-section" id="estimator">
+        <div class="calculator-container">
+            <div class="section-title" style="margin-bottom: 25px;">
+                <h2>حاسبة التقدير الأولي للتعاقد</h2>
+                <p>اختر نوع الخدمة وحجم الاحتياج للحصول على تقدير سريع لطلب التعاقد</p>
+            </div>
+
+            <form id="calcForm">
+                <div class="calc-grid">
+                    <div class="form-group">
+                        <label for="serviceType">نوع الخدمة المطلوب:</label>
+                        <select id="serviceType" onchange="calculateEstimate()">
+                            <option value="security">أفراد أمن وحراسة</option>
+                            <option value="cleaning">عمال نظافة منشآت</option>
+                            <option value="both">أمن ونظافة (مزيج)</option>
+                            <option value="supplies">توريدات عمومية فقط</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="staffCount">عدد الأفراد المطلوبين:</label>
+                        <input type="number" id="staffCount" value="2" min="1" max="100" onchange="calculateEstimate()" onkeyup="calculateEstimate()">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shiftType">نظام الشفتات:</label>
+                        <select id="shiftType" onchange="calculateEstimate()">
+                            <option value="8">8 ساعات (شفت واحد)</option>
+                            <option value="12">12 ساعة (شفت متواصل)</option>
+                            <option value="24">24 ساعة (تغطية كاملة اليوم)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="calc-result">
+                    <div>
+                        <span style="font-size: 0.9rem; opacity: 0.9;">ملخص الاحتياج التقديري:</span>
+                        <h4 id="summaryText" style="font-size: 1.2rem; margin-top: 5px;">2 أفراد أمن - نظام 8 ساعات</h4>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="applyEstimateToForm()">تأكيد وإرسال طلب تعاقد</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact & Contract Form Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>الاستفسار والتعاقدات</h2>
+            <p>يسعدنا استقبال استفساراتكم وطلبات التعاقد مع شركة IN DUTY</p>
+        </div>
+
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-building"></i>
+                    <div>
+                        <h4>المقر الرئيسي</h4>
+                        <p>منطقة اللبيني – الهرم – الجيزة</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>ساعات العمل الرسمية</h4>
+                        <p>من الساعة 10:00 صباحاً حتى 6:00 مساءً</p>
+                        <p style="font-size: 0.85rem; color: #777;">الإجازة الأسبوعية: الجمعة والسبت</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-file-contract"></i>
+                    <div>
+                        <h4>قسم التعاقدات والاتصال</h4>
+                        <p>هاتف / واتساب: 01005884635</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inquiry Form -->
+            <div class="contact-form">
+                <div id="successAlert" class="alert-success">
+                    تم تجهيز طلبكم بنجاح! سيتم تحويلكم الآن إلى الواتساب لإرسال الطلب مباشرة.
+                </div>
+
+                <form id="inquiryForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="companyName">اسم الشركة / الجهة:</label>
+                        <input type="text" id="companyName" placeholder="أدخل اسم شركتك أو مؤسستك" required>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="contactPerson">اسم المسؤول / ممثل الشركة:</label>
+                        <input type="text" id="contactPerson" placeholder="الاسم بالكامل" required>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="phone">رقم الهاتف / الواتساب:</label>
+                        <input type="tel" id="phone" placeholder="01XXXXXXXXX" required>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="details">تفاصيل الاستفسار أو التعاقد المطلوب:</label>
+                        <textarea id="details" placeholder="اذكر تفاصيل الموقع، الأعداد المطلوبة، أو أي توريدات خاصة..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">إرسال طلب الاستفسار عبر واتساب</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                IN <span style="color: var(--accent-color);">DUTY</span>
+            </div>
+            <div class="footer-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#about">عن الشركة</a>
+                <a href="#services">الخدمات</a>
+                <a href="#estimator">الحاسبة</a>
+                <a href="#contact">تواصل معنا</a>
+            </div>
+        </div>
+        <p class="copyright">جميع الحقوق محفوظة © 2026 لشركة IN DUTY للتوريدات العمومية والخدمات.</p>
+    </footer>
+
+    <!-- JavaScript logic -->
+    <script>
+        function calculateEstimate() {
+            const service = document.getElementById('serviceType').value;
+            const count = document.getElementById('staffCount').value || 1;
+            const shift = document.getElementById('shiftType').value;
+
+            let serviceName = "";
+            if (service === 'security') serviceName = "أفراد أمن وحراسة";
+            else if (service === 'cleaning') serviceName = "عمال نظافة";
+            else if (service === 'both') serviceName = "أفراد أمن + عمال نظافة";
+            else serviceName = "توريدات عمومية";
+
+            let summary = `${count} (${serviceName}) - نظام ${shift} ساعات`;
+            document.getElementById('summaryText').innerText = summary;
+        }
+
+        function applyEstimateToForm() {
+            const summary = document.getElementById('summaryText').innerText;
+            const detailsField = document.getElementById('details');
+            detailsField.value = `طلب تعاقد بناءً على الحاسبة التقديرية:\nالمطلوب: ${summary}\nنرجو التواصل لتحديد التفاصيل والأسعار.`;
+            
+            // Scroll smoothly to contact form
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // جلب البيانات المدخلة
+            const company = document.getElementById('companyName').value;
+            const person = document.getElementById('contactPerson').value;
+            const phone = document.getElementById('phone').value;
+            const details = document.getElementById('details').value;
+
+            // رقم الواتساب الخاص بك مضاف إليه كود مصر (20)
+            const whatsappNumber = "201005884635"; 
+
+            // صياغة الرسالة الاحترافية
+            const message = `*طلب استفسار وتعاقد جديد - موقع IN DUTY*%0A%0A` +
+                            `🏢 *اسم الشركة/الجهة:* ${company}%0A` +
+                            `👤 *اسم المسؤول:* ${person}%0A` +
+                            `📱 *رقم التواصل:* ${phone}%0A` +
+                            `📋 *التفاصيل والطلب:* ${details}`;
+
+            // إظهار تنبيه النجاح
+            const alertBox = document.getElementById('successAlert');
+            alertBox.style.display = 'block';
+
+            // فتح تطبيق أو موقع الواتساب بالرسالة الجاهزة
+            setTimeout(() => {
+                window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+            }, 1000);
+
+            // إعادة تعيين النموذج
+            document.getElementById('inquiryForm').reset();
+        }
+    </script>
+</body>
+</html>
